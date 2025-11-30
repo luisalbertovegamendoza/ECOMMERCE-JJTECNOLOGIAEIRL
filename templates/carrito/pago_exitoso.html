@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="text-center mt-5">
+  <h2 class="text-success">✅ Pago completado con éxito</h2>
+  <p>Gracias por su compra en JJ TECNOLOGIA.</p>
+  <a href="{% url 'camara:index' %}" class="btn btn-primary">Volver a la tienda</a>
+</div>
+{% endblock %}

@@ -1,0 +1,488 @@
+/* ============================================
+   ESTILOS GENERALES - ECOMMERCE TECNOLÓGICO
+=============================================== */
+
+/* Fuente moderna */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap");
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  background: radial-gradient(circle at center, #0a0a0f 20%, #001429 100%);
+  color: #fff;
+}
+
+/* ============================================
+   HEADER / NAVBAR
+=============================================== */
+
+.navbar-custom {
+  background: linear-gradient(90deg, #001f3f, #003366, #0055aa);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+  border-bottom: 2px solid #007bff;
+}
+
+.navbar-brand .logo-navbar {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid #00bfff;
+}
+
+.brand-name {
+  font-size: 1.1rem;
+  letter-spacing: 0.5px;
+  color: #fff;
+}
+
+.brand-slogan {
+  font-size: 0.8rem;
+  color: #cfd9ff;
+}
+
+/* Links del menú */
+.navbar-nav .nav-link {
+  color: #cfd9ff !important;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #00bfff !important;
+  text-shadow: 0 0 8px #00bfff;
+}
+
+/* Ícono del carrito */
+.carrito-icon i {
+  color: #00bfff;
+  transition: transform 0.3s ease;
+}
+
+.carrito-icon i:hover {
+  transform: scale(1.2);
+  color: #00ffff;
+}
+
+/* Botones de sesión */
+.btn-outline-success {
+  border-color: #00bfff;
+  color: #00bfff;
+}
+
+.btn-outline-success:hover {
+  background-color: #00bfff;
+  color: #000;
+}
+
+.btn-outline-danger {
+  border-color: #ff4c4c;
+  color: #ff4c4c;
+}
+
+.btn-outline-danger:hover {
+  background-color: #ff4c4c;
+  color: #fff;
+}
+
+/* ============================================
+   FOOTER
+=============================================== */
+footer {
+  background: linear-gradient(90deg, #001f3f, #003366);
+  padding: 40px 0;
+  color: #cfd9ff;
+  text-align: center;
+  font-size: 0.9rem;
+  border-top: 2px solid #007bff;
+}
+
+footer a {
+  color: #00bfff;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+  color: #00ffff;
+}
+
+/* ============================================
+   HOME
+=============================================== */
+
+.hero-section {
+  background: url("../img/banner_tech.jpg") center/cover no-repeat;
+  height: 70vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+  position: relative;
+}
+
+.hero-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.hero-section h1 {
+  position: relative;
+  font-size: 2.8rem;
+  text-shadow: 0 0 15px #00bfff;
+}
+
+.hero-section p {
+  position: relative;
+  font-size: 1.2rem;
+  color: #cfd9ff;
+}
+
+/* ============================================
+   TARJETAS DE PRODUCTOS
+=============================================== */
+.product-card {
+  background-color: #001c3d;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 0 15px rgba(0, 191, 255, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 25px rgba(0, 191, 255, 0.4);
+}
+
+.product-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+.product-info {
+  padding: 15px;
+}
+
+.product-info h5 {
+  color: #00bfff;
+  font-weight: 600;
+}
+
+.product-info p {
+  font-size: 0.9rem;
+  color: #cfd9ff;
+}
+
+.product-info .price {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #00ffff;
+}
+
+
+/* ============================================
+   CARRUSEL PRINCIPAL - HOME
+=============================================== */
+
+.carousel-section {
+  position: relative;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.carousel-inner {
+  border-radius: 0; /* sin bordes curvos, look profesional */
+  overflow: hidden;
+}
+
+/* Imágenes del carrusel */
+.carousel-img {
+  width: 100%;
+  height: 75vh;              /* altura uniforme */
+  object-fit: cover;         /* mantiene proporción */
+  object-position: center;   /* centra la imagen */
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+
+/* Botones de navegación del carrusel */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: rgba(0, 191, 255, 0.6);
+  border-radius: 50%;
+  padding: 15px;
+}
+
+.carousel-control-prev-icon:hover,
+.carousel-control-next-icon:hover {
+  background-color: rgba(0, 255, 255, 0.8);
+}
+
+/* Quitar espacio debajo del carrusel */
+main > .carousel,
+main > section {
+  margin-bottom: 0 !important;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .carousel-img {
+    height: 45vh;
+  }
+}
+
+
+/* ============================================
+   DETALLE DEL PRODUCTO
+=============================================== */
+
+.product-detail {
+  background-color: #001c3d;
+  border-radius: 20px;
+  padding: 30px;
+  color: #fff;
+  box-shadow: 0 0 25px rgba(0, 191, 255, 0.3);
+}
+
+.product-detail img {
+  border-radius: 15px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.product-detail h2 {
+  color: #00bfff;
+  margin-bottom: 15px;
+}
+
+.product-detail .price {
+  color: #00ffff;
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+}
+
+
+/* ===================================================
+   ESTILOS EXCLUSIVOS - PÁGINA DE CÁMARAS
+=================================================== */
+
+.page-camaras {
+  background: radial-gradient(circle at center, #0a0a0f 20%, #00182a 100%);
+}
+
+/* Título */
+.page-camaras .section-title {
+  color: #00b4d8;
+  font-size: 2.2rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-shadow: 0 0 10px rgba(0, 180, 216, 0.4);
+}
+
+/* Tarjetas */
+.page-camaras .card-product {
+  background: rgba(13, 27, 42, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 15px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+}
+
+.page-camaras .card-product:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 20px rgba(0, 180, 216, 0.35);
+}
+
+/* Imagen */
+.page-camaras .card-img-wrapper {
+  height: 220px;
+  overflow: hidden;
+  border-radius: 15px 15px 0 0;
+  background: #000;
+}
+
+.page-camaras .product-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease, filter 0.4s ease;
+}
+
+.page-camaras .card-product:hover .product-img {
+  transform: scale(1.1);
+  filter: brightness(1.15);
+}
+
+/* Textos */
+.page-camaras .card-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.page-camaras .card-text {
+  color: #ccc;
+  font-size: 0.9rem;
+}
+
+.page-camaras .card-price {
+  color: #00b4d8;
+  font-weight: 700;
+  font-size: 1.2rem;
+  margin-top: 0.5rem;
+}
+
+/* Botones */
+.page-camaras .btn-outline-info {
+  border: 1px solid #00b4d8;
+  color: #00b4d8;
+  transition: all 0.3s ease;
+}
+
+.page-camaras .btn-outline-info:hover {
+  background: #00b4d8;
+  color: #fff;
+}
+
+.page-camaras .btn-add-cart {
+  background: linear-gradient(135deg, #00b4d8, #0077b6);
+  border: none;
+  color: #fff;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.page-camaras .btn-add-cart:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 10px rgba(0, 180, 216, 0.5);
+}
+
+/* Ajuste responsivo */
+@media (max-width: 768px) {
+  .page-camaras .card-img-wrapper {
+    height: 180px;
+  }
+
+  .page-camaras .section-title {
+    font-size: 1.8rem;
+  }
+}
+
+
+
+
+
+/* ============================================
+   RESPONSIVE
+=============================================== */
+@media (max-width: 768px) {
+  .navbar-brand {
+    text-align: center;
+  }
+  .hero-section h1 {
+    font-size: 2rem;
+  }
+  .hero-section p {
+    font-size: 1rem;
+  }
+}
+
+
+/* ============================================
+   FOOTER TECNOLÓGICO
+=============================================== */
+
+.footer-tech {
+  background: linear-gradient(90deg, #001f3f, #003366, #001f3f);
+  color: #cfd9ff;
+  border-top: 2px solid #00bfff;
+  margin-top: 0; /* Elimina espacio superior innecesario */
+}
+
+.footer-tech h5 {
+  color: #fff;
+  font-size: 1rem;
+  letter-spacing: 0.5px;
+}
+
+.text-gradient {
+  background: linear-gradient(90deg, #00bfff, #00ffff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.footer-tech p {
+  font-size: 0.9rem;
+  color: #cfd9ff;
+}
+
+/* Íconos de redes sociales */
+.social-icon {
+  color: #00bfff;
+  font-size: 1.5rem;
+  transition: color 0.3s, transform 0.3s;
+}
+
+.social-icon:hover {
+  color: #00ffff;
+  transform: scale(1.2);
+}
+
+.footer-tech .btn-outline-info {
+  border-color: #00bfff;
+  color: #00bfff;
+}
+
+.footer-tech .btn-outline-info:hover {
+  background-color: #00bfff;
+  color: #000;
+}
+
+.footer-tech small {
+  color: #aabbee;
+  font-size: 0.85rem;
+}
+
+
+/* === HEADER DE SESIÓN === */
+.navbar-custom {
+  background-color: #0b132b;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.logo-navbar {
+  width: 70px;
+  height: 70px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.nav-link.navigation-icon {
+  color: #fff !important;
+  transition: color 0.3s;
+}
+
+.nav-link.navigation-icon:hover {
+  color: #00bcd4 !important;
+}
+
+.btn-outline-success,
+.btn-outline-danger,
+.btn-outline-primary {
+  border-radius: 20px;
+  transition: all 0.3s;
+}
+
+.btn-outline-success:hover,
+.btn-outline-danger:hover,
+.btn-outline-primary:hover {
+  transform: scale(1.05);
+}
