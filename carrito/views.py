@@ -9,14 +9,28 @@ from .carrito import Carrito
 from camara.models import Producto
 from JJTECNOLOGIAEIRL import paypal_config
 import paypalrestsdk
+from django.contrib import messages # mostrar mensajes en django
+
 
 # ------------------- Funciones del carrito -------------------
 
 def agregar_carrito(request, producto_id):
+
+    if not request.user.is_authenticated:
+        messages.warning(
+            request,
+            'Debes iniciar sesion para agregar productos al carrito'
+        )
+        return redirect('login')
+    
+
     carrito = Carrito(request)
     producto = get_object_or_404(Producto, id=producto_id)
     carrito.agregar(producto)
+
+    messages.success(request, 'Producto agregado al carrito')
     return redirect('carrito:ver_carrito')
+
 
 
 def restar_carrito(request, producto_id):
@@ -102,3 +116,10 @@ def pago_exitoso(request):
 
 def pago_cancelado(request):
     return render(request, 'carrito/pago_cancelado.html')
+
+
+
+
+def pagar_yape(request):
+    total = request.GET.get('total', 0)  # Obtenemos el total enviado desde el carrito
+    return render(request, "carrito/yape.html", {'total': total})

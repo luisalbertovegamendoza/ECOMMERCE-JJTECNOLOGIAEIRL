@@ -2,15 +2,29 @@
 <header class="navbar navbar-expand-lg navbar-dark navbar-custom py-3">
   <div class="container">
     <!-- Logo y lema -->
-    <a class="navbar-brand d-flex flex-column align-items-center text-center me-3" href="{% url 'index' %}">
-      <img src="{% static 'img/logo.jpeg' %}" alt="Logo de la empresa" class="logo-navbar mb-1">
+    <a
+      class="navbar-brand d-flex flex-column align-items-center text-center me-3"
+      href="{% url 'index' %}"
+    >
+      <img
+        src="{% static 'img/logo.jpeg' %}"
+        alt="Logo de la empresa"
+        class="logo-navbar mb-1"
+      />
       <span class="brand-name fw-bold">JJ TECNOLOGÍA EIRL</span>
       <span class="brand-slogan small">Conectamos tu vida con el futuro</span>
     </a>
 
     <!-- Botón hamburguesa (Responsive) -->
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenu"
-      aria-controls="navbarMenu" aria-expanded="false" aria-label="Toggle navigation">
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarMenu"
+      aria-controls="navbarMenu"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
       <span class="navbar-toggler-icon"></span>
     </button>
 
@@ -18,44 +32,63 @@
     <div class="collapse navbar-collapse justify-content-end" id="navbarMenu">
       <ul class="navbar-nav align-items-center mb-2 mb-lg-0">
         <li class="nav-item mx-2">
-          <a class="nav-link navigation-icon" href="{% url 'index' %}">Inicio</a>
+          <a class="nav-link navigation-icon" href="{% url 'index' %}"
+            >Inicio</a
+          >
         </li>
         <li class="nav-item mx-2">
-          <a class="nav-link navigation-icon" href="{% url 'listar_camara' %}">Cámaras</a>
+          <a class="nav-link navigation-icon" href="{% url 'listar_camara' %}"
+            >Cámaras</a
+          >
         </li>
 
         <!-- Carrito -->
         <li class="nav-item mx-2">
-          <a class="nav-link carrito-icon" href="#" data-bs-toggle="modal" data-bs-target="#carritoModal">
+          <a
+            class="nav-link carrito-icon"
+            href="#"
+            data-bs-toggle="modal"
+            data-bs-target="#carritoModal"
+          >
             <i class="fas fa-shopping-cart fs-5"></i>
           </a>
         </li>
 
+        <!-- ================= ADMIN ================= -->
+        {% if user.is_authenticated and user.is_staff %}
+        <li class="nav-item mx-2">
+          <a class="btn btn-outline-warning btn-sm" href="/admin/">
+            <i class="fa-solid fa-gear"></i> Administrador
+          </a>
+        </li>
+        {% endif %}
+        <!-- ========================================= -->
+
         <!-- Sesión -->
         {% if user.is_authenticated %}
-          <li class="nav-item mx-2 d-flex align-items-center text-light">
-            <i class="fa-solid fa-user-circle me-1 text-info"></i>
-            <span class="fw-semibold">Hola, {{ user.username }}</span>
-          </li>
-          <li class="nav-item mx-2">
-            <form method="post" action="{% url 'logout' %}">
-              {% csrf_token %}
-              <button class="btn btn-outline-danger btn-sm" type="submit">
-                <i class="fa-solid fa-right-from-bracket"></i> Salir
-              </button>
-            </form>
-          </li>
+        <li class="nav-item mx-2 d-flex align-items-center text-light">
+          <i class="fa-solid fa-user-circle me-1 text-info"></i>
+          <span class="fw-semibold">Hola, {{ user.username }}</span>
+        </li>
+        <li class="nav-item mx-2">
+          <form method="post" action="{% url 'logout' %}">
+            {% csrf_token %}
+            <button class="btn btn-outline-danger btn-sm" type="submit">
+              <i class="fa-solid fa-right-from-bracket"></i> Salir
+            </button>
+          </form>
+        </li>
         {% else %}
-          <li class="nav-item mx-2">
-            <a class="btn btn-outline-success btn-sm" href="{% url 'login' %}">
-              <i class="fa-solid fa-right-to-bracket"></i> Iniciar sesión
-            </a>
-          </li>
-          <li class="nav-item mx-2">
-            <a class="btn btn-outline-primary btn-sm" href="{% url 'registro' %}">
-              <i class="fa-solid fa-user-plus"></i> Registrarse
-            </a>
-          </li>
+        <li class="nav-item mx-2">
+          <a class="btn btn-outline-success btn-sm" href="{% url 'login' %}">
+            <i class="fa-solid fa-right-to-bracket"></i> Iniciar sesión
+          </a>
+        </li>
+        <li class="nav-item mx-2">
+          <a class="btn btn-outline-primary btn-sm" href="{% url 'registro' %}">
+            <i class="fa-solid fa-user-plus"></i> Registrarse
+          </a>
+        </li>
         {% endif %}
       </ul>
     </div>

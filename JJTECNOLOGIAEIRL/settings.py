@@ -123,9 +123,6 @@ USE_TZ = True
 
 STATIC_URL = 'static/'  # ARCHIVOS ESTATICOS JS CSS E IMAGENES
 
-STATICFILES_DIRS = [
-    BASE_DIR / 'static',   # ARCHIVOS ESTATICOS JS CSS E IMAGENES
-]
 
 STATIC_ROOT = BASE_DIR / 'staticfiles'  # PARA PRODUCCION
 
@@ -146,3 +143,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 STATICFILES_DIRS = [
     BASE_DIR / 'static',
 ]
+
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/'
+LOGIN_URL = '/login/'

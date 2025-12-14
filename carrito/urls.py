@@ -18,6 +18,7 @@ urlpatterns = [
     path('pagar-paypal/', views.pagar_paypal, name='pagar_paypal'),
     path('pago-exitoso/', views.pago_exitoso, name='pago_exitoso'),
     path('pago-cancelado/', views.pago_cancelado, name='pago_cancelado'),
+    path('pagar-yape/', views.pagar_yape, name='pagar_yape'),
 
 
 
