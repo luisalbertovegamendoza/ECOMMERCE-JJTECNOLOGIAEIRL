@@ -24,30 +24,14 @@
 
   <body class="d-flex flex-column min-vh-100 page-camaras">
     <!-- ✅ HEADER -->
-    {% include 'common/header.html' %} {% if messages %}
-    <div class="container mt-3">
-      {% for message in messages %}
-      <div
-        class="alert alert-{{ message.tags }} alert-dismissible fade show"
-        role="alert"
-      >
-        {{ message }}
-        <button
-          type="button"
-          class="btn-close"
-          data-bs-dismiss="alert"
-        ></button>
-      </div>
-      {% endfor %}
-    </div>
-    {% endif %}
+    {% include 'common/header.html' %}
 
     <!-- ✅ CONTENIDO PRINCIPAL -->
     {% block content %}
     <main class="flex-grow-1 py-5 main-bg">
       <div class="container">
         <h2 class="text-center mb-5 fw-bold section-title">
-          Cámaras y Accesorios
+          Productos y Accesorios
         </h2>
 
         <div class="row g-4 justify-content-center">
